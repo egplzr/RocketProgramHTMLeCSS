@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+
+<body>
+    <h1>Formulários</h1>
+
+    <form>
+        <label for="texto">
+            <p>Texto</p>
+        </label>
+        <textarea name="texto" id="texto" placeholder="Digite um texto"></textarea>
+
+        <label for="texto">
+            <p>Profissão</p>
+            <select name="profissao">
+                <option value="Desenvolvedor">Desenvolvedor</option>
+                <option value="Programador">Programador</option>
+                <option value="RH">RH</option>
+                <option value="Professor">Professor</option>
+                <option value="Contador">Contador</option>
+            </select>
+        </label>
+        <br>
+        <input type="text" name="Nome" placeholder="Digite seu nome">
+        <br>
+        <input type="email" name="email" placeholder="Digite seu email">
+        <br>
+        <input type="password" name="Senha" placeholder="Digite sua senha">
+        <br>
+        <input type="color" name="cor">
+        <br>
+        <input type="date" name="Aniversário">
+        <input type="time" name="Horário">
+        <input type="datetime-local" name="Data e hora">
+        <input type="month" name="Mês">
+        <input type="week" name="semana">
+        <br>
+        <input type="number" name="Números" placeholder="Digite números">
+        <br>
+        <input type="range" name="range" min="0" max="1000">
+        <br>
+        <input type="search" name="busca" placeholder="busque aqui">
+        <br>
+        <input type="tel" name="telefone" placeholder="Digite seu telefone">
+        <input type="url" name="url" placeholder="Digite um url">
+        <br>
+        <!-- Input escondido: enviar informações sem que o usuário veja-->
+        <input type="hidden" name="escondidin">
+
+        <!-- Quando uma bolinha é selecionada, a outra só é desmarcada pq todas tem o mesmo name. Isso conecta elas. -->
+        <label>
+            <input type="radio" name="area" value="front-end">
+            <span>front-end</span>
+        </label>
+        <label>
+            <input type="radio" name="area" value="back-end">
+            <span>back-end</span>
+        </label>
+        <label>
+            <input type="radio" name="area" value="full-stack">
+            <span>full-stack</span>
+        </label>
+        <br>
+        <input type="checkbox" name="estilo-muscial" value="Jazz">
+        <input type="checkbox" name="estilo-muscial" value="HipHop">
+        <input type="checkbox" name="estilo-muscial" value="Rock">
+        <input type="checkbox" name="estilo-muscial" value="Country">
+        <br>
+        <label>
+            <p>Escolha um arquivo</p>
+            <input type="file" name="arquivo">
+        </label>
+        <!-- Botão programavél = type="button" -->
+        <button type="button">Button</button>
+
+        <button type="reset">Reset</button>
+
+        <!-- É o padrão do button. Envia as informações -->
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+
+</html>
