@@ -1,0 +1,28 @@
+Container elements:
+
+- tag <span> para linhas de texto específicas (inline Container)
+
+- tag <div> para blocos de códigos (block Container): agrupa conteúdos para fins de estilo.
+Não possui significado semântico. 
+
+- tag <section> para blocos de código temáticos com assuntos específicos. Usar quando o 
+bloco de código possui conteúdo independente da estrutura da página. Ex: section Sobre Nós, contatos e etc
+
+- tag <article> similar a section, porém nele deve conter conteúdos dependentes e auto-contidos,
+que possam ser reutilizados de forma singular ou distribuídos. Conteúdos que façam sentido isoladamente.
+Ex: post de um blog
+
+- tag <header>: Define o cabeçalho de um documento ou de uma seção, geralmente contendo logotipos, títulos e menus de navegação.
+
+- tag <footer>: Representa o rodapé de um documento ou seção, onde podem estar informações de contato, direitos autorais e links importantes.
+
+- tag <nav>: Específico para áreas de navegação, contendo links para outras partes do site.
+
+- tag <aside>: Usado para conteúdos complementares ou relacionados, como barras laterais, citações ou links adicionais.
+
+
+***Use <div> e <span> quando precisar de um agrupamento sem significado semântico – focando na estrutura, 
+estilo ou manipulação via JavaScript.
+
+***Opte por <section>, <article>, <header>, <footer>, <nav> e <aside> para fornecer contexto semântico ao 
+seu conteúdo, o que melhora a acessibilidade e o entendimento pelos motores de busca.
