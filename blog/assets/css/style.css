@@ -1,21 +1,18 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
 }
 
-article.post {
-    width: 80%;
-    margin: 0 auto;
-    background: #bbbbbb;
-    padding: 30px;
+.conteudo img {
+    max-width: 100%;
 }
 
 h1 {
-    color: blue;
     font-size: 32px;
     font-weight: 900;
 }
@@ -23,6 +20,7 @@ h1 {
 h2 {
     font-size: 20px;
     font-weight: 700;
+    margin-bottom: 16px;
 }
 
 h3 {
@@ -30,12 +28,9 @@ h3 {
     font-weight: 700;
 }
 
-ol, ul {
+ol,
+ul {
     padding-left: 30px;
-}
-
-#header {
-    color: green;
 }
 
 a {
@@ -46,5 +41,57 @@ a {
 p {
     text-align: justify;
     text-indent: 30px;
+    margin-block: 16px;
 }
 
+li {
+    padding-bottom: 8px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #bbbbbb;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+pre {
+    display: block;
+    background-color: #bbbbbb;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 0px 16px 8px;
+}
+
+.post {
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+    background: #dddddd;
+    padding: 16px;
+    margin-bottom: 32px;
+}
+
+header#header {
+    background-color: #1865ff;
+    color: #ffffff;
+    padding: 16px 32px;
+}
+
+header p {
+    text-indent: 0;
+    margin: 0;
+}
+
+aside {
+    background-color: #4684ff;
+    color: #ffffff;
+    padding: 16px 16px 8px;
+    margin: 0 0 16px;
+}
+
+aside a {
+    color: #ffffff;
+}
