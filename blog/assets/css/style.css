@@ -8,6 +8,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+main{
+    padding: 132px 0 32px 150px;
+}
+
 .conteudo img {
     max-width: 100%;
 }
@@ -72,12 +76,18 @@ pre {
     background: #dddddd;
     padding: 16px;
     margin-bottom: 32px;
+    border: 2px solid #000000;
 }
 
 header#header {
     background-color: #1865ff;
     color: #ffffff;
     padding: 16px 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
 }
 
 header p {
@@ -89,7 +99,10 @@ aside {
     background-color: #4684ff;
     color: #ffffff;
     padding: 16px 16px 8px;
-    margin: 0 0 16px;
+    width: 150px;
+    position: fixed;
+    top: 100px;
+    bottom: 0;
 }
 
 aside a {
