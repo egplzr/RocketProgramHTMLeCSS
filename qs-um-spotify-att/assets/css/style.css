@@ -31,12 +31,12 @@
   #menu {
     background-color: #111111;
     padding: 16px 16px 8px;
-    width: 150px;
+    width: 175px;
     position: fixed;
     top: 100px;
     bottom: 0;
   }
-  
+
   #menu li {
     list-style: none;
     margin-bottom: 15px;
@@ -71,19 +71,34 @@
     margin-bottom: 32px;
   }
 
+  article.block ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
   article.block ul li{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     background: #292b28;
     color: #ffffff;
     font-weight: 500;
     border: 1px solid #000000;
     border-radius: 4px;
-    padding: 0.5rem 1rem;
-    margin: 0.25rem;
-    width: 100%;
+    padding: 8px 16px;
+    margin: 4px;
+    height: 160px;
+    width: 160px;
     max-width: 400px;
     margin-top: 10px;
     place-items: center;
+  }
+
+  article.block ul li a{
+    
   }
   
   article h2 {
