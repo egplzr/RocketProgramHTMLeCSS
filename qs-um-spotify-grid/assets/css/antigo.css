@@ -1,0 +1,27 @@
+
+  
+  #header h1 {
+    font-size: 32px;
+  }
+
+  
+  article h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  article p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  article a{
+    color: green;
+  }
+
+  footer img{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }

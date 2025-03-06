@@ -1,12 +1,44 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+*::-webkit-scrollbar {
+    height: 10px;
+    width: 6px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #C9BB91;
+  }
+  
+  *::-webkit-scrollbar-track:hover {
+    background-color: #C9BB91;
+  }
+  
+  *::-webkit-scrollbar-track:active {
+    background-color: #C9BB91;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #750000c7;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #A35757;
+  }
+  
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #A35757;
+  }
+
+body {
     font-family: 'Noto Serif', sans-serif;
-    background: #FAF9F6;
+    background: #c9bb91;
+    height: 100vh;
+    overflow: hidden;
 }
 
 h1 {
@@ -29,7 +61,7 @@ p {
 .content ul {
     list-style: none;
     padding: 0;
-    margin: 5px auto;    
+    margin: 5px auto;
 }
 
 a {
@@ -38,47 +70,54 @@ a {
 
 .content ul li {
     display: block;
-    background: #b84a4a;
+    background: #af6856bd;
     color: #ffffff;
     font-weight: 500;
-    border: 1px solid #000000;
+    border-left: 5px solid #ffae00;
     border-radius: 4px;
     padding: 0.5rem 1rem;
     margin: 0.25rem;
 }
 
-div#card header#header img{
+div#card header#header img {
     max-width: 150px;
     border-radius: 50px;
 }
 
 div#card {
     display: grid;
-    place-items: center; 
+    place-items: center;
     background: #967d48;
     color: aliceblue;
-    width: 50%;
+
+    width: 45%;
+    height: 90vh;
+
     margin: 0 auto;
+    margin-top: 25px;
     padding: 30px;
+    overflow: auto;
+
     font-size: 15px;
     font-weight: 500;
+    border: 7px outset #9c5a2e;
     border-radius: 10px;
 }
 
-header{
+header {
     display: grid;
-    place-items: center; 
+    place-items: center;
 }
 
-main{
+main {
     width: 100%;
     max-width: 400px;
     margin-top: 30px;
 }
 
-section.content{
+section.content {
     display: grid;
-    place-items: center; 
+    place-items: center;
     text-align: left;
     background: #744236;
     color: #ffffff;
