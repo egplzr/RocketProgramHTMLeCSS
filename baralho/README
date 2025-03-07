@@ -36,3 +36,5 @@ compatibilidade com navegadores que não suportam a versão padrão (sem prefixo
     transform: rotateY(180deg);
 }
 
+* hover = "pairar". essa pseudo-classe define uma configuração para a classe .card-inner para que quando o mouse passe por cima da classe, ela rotacione em 180° no eixo Y.
+* Pseudo-classes permitem estilizar elementos com base em seu estado ou relação com outros elementos.
