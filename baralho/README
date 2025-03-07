@@ -1,0 +1,38 @@
+O código desse projeto foi criado com base no seguinte video: https://www.youtube.com/watch?v=Bj6lC93JMi0
+
+O intuito do desafio era apenas criar uma carta que girasse em torno do próprio eixo. Até o minuto 16 do tutorial isso já é ensinado. Abaixo segue um estudo do código feito.
+
+:root {
+    --card-width: 157px;
+    --card-height: 220px;
+}
+
+* ":root" é um seletor de pseudo-classe.
+* pseudo-classes são palavras-chave adicionadas a seletores(":") que especificam um estado especial dentro do elemento selecionado.
+* No caso a pseudo-classe ":root" representa o elemento raiz do documento, no HTML, o elemento raiz é a tag <html></html>.
+* O código está criando duas variáveis dentro do elemento raiz, portanto, duas variáveis globais.
+* Variáveis são declaradas com "--nome-da-variavel: valor;" e podem ser utilizadas com "var(--nome-da-variavel)".
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+* Esse bloco de código define propriedades em comum para as <div>s que contém as imagens da carta. Faz com que as imagens ocupem todo
+o espaço da <div> e utiliza a propriedade "backface-visibility" para controlar a visibilidade da parte de trás do elemento. Isso garante
+que mesmo que o elemento seja rotacionado, sua face traseira não será exibida.
+
+* "-webkit-backface-visibility: hidden;" e "backface-visibility: hidden;" possuem a mesma função. O prefixo "-webkit-" serve para garantir
+compatibilidade com navegadores que não suportam a versão padrão (sem prefixo).
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
