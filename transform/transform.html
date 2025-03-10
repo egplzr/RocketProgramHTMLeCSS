@@ -10,20 +10,35 @@
             margin: 0;
             height: 100vh;
             background-color: coral;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .box{
-            background: darkcyan;
+            background: rgba(0, 139, 139);
             width: 50px;
             height: 50px;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) rotate(45deg) scale(2) skew(25deg, 25deg);
+            transform: translate(-50%, -50%) scale(2);
+            box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        .box:hover{
+            background: rgb(77, 1, 139);
+        }
+
+        .box:active{
+            box-shadow: inset 4px 4px 4px 0px rgb(0, 0, 0);
         }
     </style>
 </head>
 <body>
-    <div class="box"></div>
+    mundo <br>
+    mundo <br>
+    mundo <br>
+    <div class="box">Box</div>
 </body>
 </html>

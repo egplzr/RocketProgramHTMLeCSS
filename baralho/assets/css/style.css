@@ -18,19 +18,24 @@ h1 {
     font-size: 38px;
 }
 
+header h1::first-letter {
+    font-size: 65px;
+}
+
+
 .card-container {
     margin-top: 30px;
     position: relative;
     display: grid;
     place-items: center;
     margin-top: 200px;
-    transform: scale(2.5);
+    transform: scale(2);
 }
 
 .card {
     position: absolute;
-    height: 157px;
-    width: 220px;
+    height: var(--card-height);
+    width: var(--card-width);
     perspective: 1000px;
     cursor: pointer;
 }

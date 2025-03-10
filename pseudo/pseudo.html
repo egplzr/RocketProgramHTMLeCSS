@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: coral;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            flex-direction: column;
+        }
+
+        .box{
+            background: rgba(0, 139, 139);
+            width: 50px;
+            height: 50px;
+            box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        .box:hover{
+            background: rgb(77, 1, 139);
+        }
+
+        .box:active{
+            box-shadow: inset 4px 4px 4px 0px rgb(0, 0, 0);
+        }
+
+        input:focus{
+            color: brown;
+        }
+
+        /* .box:first-child{
+            background-color: darkgoldenrod;
+        } */
+
+        /* .box:nth-child(1){
+            background-color: darkgoldenrod;
+        } */
+
+        /* .box:not(.special) {
+            background-color: darkgoldenrod;
+        } */
+
+        /* .box:first-child {
+            background-color: darkgoldenrod;
+        } */
+
+        .quote::before {
+            content: open-quote;
+        }
+
+        .quote::after {
+            content: close-quote;
+        }
+
+        .speak {
+            border-radius: 50%;
+            padding: 16px;
+        }
+
+        .speak::after {
+            content: '';
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box quote">olá mundo</div>
+    <div class="box speak">olá mundo</div>
+    <div class="box">olá mundo</div>
+    <div class="box">olá mundo</div>
+</body>
+</html>
