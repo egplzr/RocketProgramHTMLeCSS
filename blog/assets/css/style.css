@@ -1,3 +1,7 @@
+:root {
+    font-size: 62.5%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +10,11 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
 }
 
 main{
-    padding: 132px 0 32px 150px;
+    padding: 132px 0 32px;
 }
 
 .conteudo img {
@@ -17,24 +22,23 @@ main{
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 3.2rem;
     font-weight: 900;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 16px;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 700;
 }
 
 ol,
 ul {
-    padding-left: 30px;
+    padding-left: 3rem;
 }
 
 a {
@@ -44,50 +48,59 @@ a {
 
 p {
     text-align: justify;
-    text-indent: 30px;
-    margin-block: 16px;
+    text-indent: 3rem;
 }
 
 li {
-    padding-bottom: 8px;
+    padding-bottom: 0.8rem;
 }
 
 .badge {
     display: inline-block;
     background-color: #bbbbbb;
-    font-size: 12px;
-    padding: 8px;
-    border-radius: 8px;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
 }
 
 pre {
     display: block;
     background-color: #bbbbbb;
-    font-size: 12px;
-    padding: 8px;
-    border-radius: 8px;
-    margin: 0px 16px 8px;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    margin: 0 1.6rem;
 }
 
 .post {
     width: 90%;
     margin: 0 auto;
-    padding: 30px;
+    padding: 3rem;
     background: #dddddd;
-    padding: 16px;
-    margin-bottom: 32px;
-    border: 2px solid #000000;
+    padding: 1.6rem;
+    margin-bottom: 3.2rem;
+    border: 0.2rem solid #000000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.post section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
 }
 
 header#header {
     background-color: #1865ff;
     color: #ffffff;
-    padding: 16px 32px;
+    padding: 1.6rem 3.2rem;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 10rem;
 }
 
 header p {
@@ -98,11 +111,13 @@ header p {
 aside {
     background-color: #4684ff;
     color: #ffffff;
-    padding: 16px 16px 8px;
-    width: 150px;
+    padding: 1.6rem 1.6rem 0.8rem;
+    width: 15rem;
     position: fixed;
-    top: 100px;
+    top: 10rem;
     bottom: 0;
+
+    display: none;
 }
 
 aside a {
@@ -114,14 +129,117 @@ nav {
 }
 
 nav ul {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
+    list-style: none;
+    padding: 0;
 }
 
-nav ul li {
-    background-color: #000000;
+nav ul a {
+    display: block;
+    opacity: 0.8;
+    transition: 0.3s;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+nav ul a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 0.2rem;
+    background: #ffffff;
+    transition: 0.3s;
+}
+
+nav ul a:hover {
+    opacity: 1;
+}
+
+nav ul a:hover::before {
+    left: 0%;
+}
+
+.menu-button {
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    top: 50%;
+    right: 1.6rem;
+    transform: translateY(-50%);
+    border: 0;
+    background: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.4rem;
+    cursor: pointer;
+}
+
+.menu-button div{
+    height: 0.5rem;
+    width: 3.2rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    position: relative;
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
+.menu-button div::before {
+    content: '';
+    height: 0.5rem;
+    width: 3.2rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 0;
+    top: -1rem;
+    transition: 0.3s;
+}
+
+.menu-button div::after {
+    content: '';
+    height: 0.5rem;
+    width: 32px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+
+.menu-button:hover div {
+    transform: rotate(-45deg);
+    opacity: 1;
+}
+
+.menu-button:hover div::before {
+    left: 0;
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.menu-button:hover div::after {
+    left: 0;
+    bottom: 0;
+    transform: rotate(-90deg);
+}
+
+@media (min-width: 600px) {
+    .menu-button {
+        display: none;
+    }
+
+    aside {
+        display: flex;
+    }
+
+    main {
+        padding: 13.2rem 0 3.2rem 20rem;
+    }
 }

@@ -8,65 +8,43 @@ body {
     font-family: 'Noto Serif', sans-serif;
     background: linear-gradient(to right, #14142e, #001c24);
     color: white;
-
     display: grid;
-    grid-template-areas: "header header" "aside main";
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: 80px 1fr;
-    gap: 5px;
-    place-items: center;
-    padding: 0 65px;
+    grid-template-areas: 
+        "header"
+        "aside"
+        "main";
+    grid-template-rows: auto auto 1fr;
+    gap: 15px;
+    padding: 0 1rem;
+    min-height: 100vh;
 }
 
-header{
+header {
     grid-area: header;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 aside {
     grid-area: aside;
-    margin-bottom: auto;
+    width: 100%;
 }
 
 main {
     grid-area: main;
     width: 100%;
-    overflow: auto;
-    max-height: calc(100vh - 80px - 5px - 80px);
-    /* max-height: 450px; */
-    padding-right: 16px;
-
+    overflow: visible;
+    padding-right: 0;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
-h2{
-    margin-bottom: 12px;
-}
-
-h4{
-    margin-top: 5px;
-    margin-bottom: 7px;
-    margin-left: 5px;
-}
-
-p {
-    font-size: 16px;
-    line-height: 20px;
-    margin-bottom: 15px;
-    margin-left: 15px;
-}
-
-a:link {
-    color: rgb(0, 255, 76);
-}
-
-a:visited{
-  color: rgb(0, 255, 157);
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
 }
 
 #coluna-foto {
@@ -78,38 +56,42 @@ a:visited{
     text-align: center;
 }
 
-#img-perfil{
-    width: 200px;
-    max-width: 100%;
+#img-perfil {
+    width: 100%;
+    max-width: 200px;
     height: auto;
-    border: none;
-    padding: 0;
     border-radius: 5px;
+    margin: 0 auto 1rem;
 }
 
 #links {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    gap: 2.5px;
+    gap: 0.5rem;
+    margin-top: 2rem;
 }
 
-.icon {
-    width: 24px;
-    height: 24px;
-}
-
-.btn-sm {
+#links a {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    transition: all 0.2s ease-out;
+}
+
+.card {
+    background: #002e3b;
+    border: 2px solid #6898f1;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
 }
 
 .card ul {
     display: grid;
-    grid-template-columns: repeat(3, 200px);
-    grid-auto-rows: 1fr;
-    margin-left: 90px;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
     list-style: none;
     padding: 0;
 }
@@ -120,33 +102,95 @@ a:visited{
     font-weight: 500;
     border: 1px solid #4cc9f0;
     border-radius: 4px;
-    margin: 0.25rem;
-}
-
-.card ul li button{
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: none;
-    border: none;
-}
-
-.card{
-    background: #002e3b;
-    border: 2px solid #6898f1;
-    padding: 1rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-}
-
-.card ul li:hover{
-    background-color: #334c53;
-    box-shadow: 0 0 15px #00ff9d33;
-    transform: scale(1.03);
     transition: all 0.3s ease-out;
 }
 
-#links a:hover{
+.card ul li button {
+    width: 100%;
+    padding: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (min-width: 720px) {
+    body {
+        grid-template-areas: 
+            "header header"
+            "aside main";
+        grid-template-columns: 250px 1fr;
+        grid-template-rows: auto 1fr;
+        padding: 0 2rem;
+        gap: 20px;
+    }
+
+    main {
+        max-height: calc(100vh - 120px);
+        overflow: auto;
+        padding-right: 1rem;
+    }
+
+    #img-perfil {
+        width: 150px;
+    }
+
+    aside {
+        height: 417px;
+    }
+
+    .card ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        grid-template-columns: 300px 1fr;
+        padding: 0 65px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    aside {
+        height: 500px;
+    }
+
+    .card ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #img-perfil {
+        width: 200px;
+    }
+}
+
+/* Estilos comuns para todos os tamanhos */
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+a:link {
+    color: rgb(0, 255, 76);
+}
+
+a:visited {
+    color: rgb(0, 255, 157);
+}
+
+.card ul li:hover {
+    background-color: #334c53;
+    box-shadow: 0 0 15px #00ff9d33;
     transform: scale(1.03);
-    transition: all 0.2s ease-out;
+}
+
+#links a:hover {
+    transform: scale(1.03);
 }
