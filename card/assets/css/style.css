@@ -5,7 +5,7 @@
 }
 
 :root {
-    font-size: 62.5%;
+    font-size: 6.25%;
 }
 
 body {
@@ -16,34 +16,31 @@ body {
 }
 
 h1 {
-    font-size: 26px;
+    font-size: 26rem;
     font-weight: 900;
-    margin: 10px;
+    margin: 10rem;
+    
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 18rem;
     font-weight: 600;
-    margin: 10px;
+    margin: 10rem;
 }
 
 p {
     text-align: justify;
-    margin: 12px;
+    margin: 12rem;
 }
 
 .content ul {
     list-style: none;
     padding: 0;
-    margin: 5px auto;
+    margin: 5rem auto;
 }
 
 a:link {
     color: rgb(255, 145, 0);
-}
-
-a:hover {
-  color: rgb(255, 118, 76);
 }
 
 a:visited{
@@ -55,11 +52,13 @@ a:visited{
     background: #af6856bd;
     color: #ffffff;
     font-weight: 500;
-    border-left: 5px solid #ffae00;
-    border-radius: 4px;
+    border-left: 5rem solid #ffae00;
+    border-radius: 4rem;
     padding: 0.5rem 1rem;
     margin: 0.25rem;
-    margin-bottom: 7px;
+    margin-bottom: 7rem;
+    transition: 0.3s;
+    box-shadow: 3rem 2rem rgba(0, 0, 0, 47%);
 }
 
 .content ul li button{
@@ -70,12 +69,36 @@ a:visited{
   border: none;
 }
 
-div#card header#header img {
-    max-width: 150px;
-    border-radius: 50px;
+.content ul li button a:hover{
+    color: #750000c7;
 }
 
-div#card {
+.content ul li:hover {
+    transform: scale(1.05);
+    animation-name: colorFill;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-duration: 0.3s;
+}
+
+@keyframes colorFill {
+    0%{
+        background: #af6856bd;
+    }
+    100%{
+        background: #ffae00;
+    }
+}
+
+#card #header img {
+    max-width: 150rem;
+    border-radius: 50rem;
+    border: 7rem outset #c9bb91;
+}
+
+#card {
     display: grid;
     place-items: center;
     background: #967d48;
@@ -85,16 +108,16 @@ div#card {
     height: 90vh;
 
     margin: 0 auto;
-    margin-top: 25px;
-    padding: 30px;
+    margin-top: 25rem;
+    padding: 30rem;
     overflow: auto;
 
-    font-size: 15px;
+    font-size: 15rem;
     font-weight: 500;
-    border: 7px outset #9c5a2e;
-    border-radius: 10px;
+    border: 7rem outset #9c5a2e;
+    border-radius: 10rem;
 
-    box-shadow: 6px 6px 3px 2px rgba(0, 0, 0, 47%);
+    box-shadow: 8rem 8rem 3rem 2rem rgba(0, 0, 0, 0.521);
 }
 
 header {
@@ -104,17 +127,20 @@ header {
 
 main {
     width: 100%;
-    max-width: 400px;
-    margin-top: 30px;
+    max-width: 400rem;
+    margin-top: 30rem;
 }
 
-section.content {
+.content {
     display: grid;
     place-items: center;
     text-align: left;
+
     background: #744236;
     color: #ffffff;
-    border-radius: 15px;
-    border-color: #000000;
-    margin-bottom: 18px;
+
+    border-radius: 15rem;
+    border: 7rem inset #9c5a2e;
+    box-shadow: inset 6rem 3rem 2rem rgba(0, 0, 0, 47%);
+    margin-bottom: 18rem;
 }
