@@ -34,8 +34,8 @@ header h1::first-letter {
 
 .card {
     position: absolute;
-    height: var(--card-height);
-    width: var(--card-width);
+    height: 157px;
+    width: 220px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -68,5 +68,5 @@ header h1::first-letter {
 /* CSS criado acima tem o intuito de facilitar o efeito de virar a carta */
 
 .card:hover .card-inner {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) scale(1.1);
 }

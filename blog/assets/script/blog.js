@@ -127,6 +127,7 @@ const posts = [
           vivemos, trabalhamos e nos comunicamos.
         </p>
         `,
+        active: true,
     },
 
     {
@@ -218,6 +219,7 @@ const posts = [
           digital, permitindo trocas de dados rápidas e eficientes.
         </p>
         `,
+        active: true,
     },
 
     {
@@ -306,6 +308,7 @@ const posts = [
           JavaScript (para comportamento dinâmico).
         </p>
         `,
+        active: true,
     },
 
     {
@@ -374,6 +377,7 @@ const posts = [
           agradáveis!
         </p>
         `,
+        active: true,
     }
 ];
 
@@ -412,5 +416,6 @@ function toggleMenu() {
 allLinksEl.forEach((link) => {
     link.onclick = toggleMenu;
 });
-menuButtonEl.onclick = toggleMenu;
+// menuButtonEl.onclick = toggleMenu;
+menuButtonEl.addEventListener("click", toggleMenu);
 
