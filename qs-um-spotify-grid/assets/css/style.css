@@ -32,7 +32,6 @@ header {
   justify-content: center;
   align-items: center;
   border-bottom: 0.2rem solid #ffffff;
-  width: 70%;
 }
 
 .header-logo,
@@ -125,7 +124,6 @@ footer {
   height: auto;
 }
 
-/* Tablet */
 @media (min-width: 768px) {
   body {
     grid-template-areas: 
@@ -174,23 +172,6 @@ footer {
   }
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
-  aside {
-    padding: 2rem 3rem;
-  }
-  
-  .block ul {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .header-logo,
-  .header-profile {
-    width: 100px;
-  }
-}
-
-/* Efeitos Hover */
 @media (hover: hover) {
   a {
     transition: color 0.3s ease;
