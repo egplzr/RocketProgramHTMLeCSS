@@ -1,0 +1,179 @@
+:root {
+    --primary-color: #4f240d;
+    --secondary-color: #852e0c;
+    --accent-color: #875335;
+    --light-color: #d4bb9c;
+    --mid-color: #bb9c75;
+    --dark-color: #c7975d;
+    --text-dark: #4f240d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--light-color);
+}
+
+section {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.header {
+    background: var(--primary-color);
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    animation: slideDown 0.5s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.container {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;    
+}
+
+.menu-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+.menu-category {
+    background: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.menu-category:hover {
+    transform: translateY(-5px);
+}
+
+.menu-list {
+    list-style: none;
+}
+
+.menu-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgba(255, 228, 196, 0.3);
+}
+
+.sub-items {
+    list-style: circle;
+    margin-left: 1.5rem;
+    font-size: 0.9em;
+    padding: 0.5rem 0;
+}
+
+.horarios {
+    background-color: var(--mid-color);
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem;
+}
+
+.grid-horarios table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+}
+
+.grid-horarios th,
+.grid-horarios td {
+    padding: 0.75rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.contato {
+    border-radius: 10px;
+    background-color: var(--dark-color);
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.contato h2 {
+    text-align: center;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    background: rgba(255, 228, 196, 0.1);
+}
+
+button {
+    background: var(--secondary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: var(--primary-color);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-horarios {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 1rem;
+    }
+
+    .grid-horarios table {
+        min-width: auto;
+    }
+    
+    .grid-horarios th,
+    .grid-horarios td {
+        white-space: normal;
+    }
+}

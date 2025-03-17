@@ -1,13 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brown Moon - Coffe Shop</title>
+    <title>Rocket Coffee</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-    <header>
-        <img src="./assets/images/AlparRocketCoffe.jpg" alt="Coffe Logo">
+    <header class="header">
+        <img src="./assets/images/AlparRocketCoffe-removebg-preview.png" alt="Logo Rocket Coffee" class="logo">
+        <h1>Rocket Coffee</h1>
     </header>
+
+    <main class="container">
+        <section class="cardapio">
+            <h2 class="section-title">Cardápio</h2>
+
+            <div class="menu-grid">
+                <article class="menu-category">
+                    <h3>Salgados</h3>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            Croissant
+                            <ul class="sub-items">
+                                <li>Frango</li>
+                                <li>Presunto e queijo</li>
+                                <li>Chocolate</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            Esfiha
+                            <ul class="sub-items">
+                                <li>Carne</li>
+                                <li>Frango</li>
+                                <li>Calabresa</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">Coxinha</li>
+                        <li class="menu-item">Mini Pizza</li>
+                    </ul>
+                </article>
+                <article class="menu-category">
+                    <h3>Doces</h3>
+                    <ul class="menu-list">
+                        <li class="menu-item">Sonho</li>
+                        <li class="menu-item">Rabanada</li>
+                        <li class="menu-item">
+                            Bolos
+                            <ul class="sub-items">
+                                <li>Morango</li>
+                                <li>Leite-ninho</li>
+                                <li>Chocolate</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </article>
+                <article class="menu-category">
+                    <h3>Bebidas</h3>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            Café
+                            <ul class="sub-items">
+                                <li>Expresso</li>
+                                <li>Com leite</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            Refrigerantes
+                            <ul class="sub-items">
+                                <li>Coca-cola</li>
+                                <li>Guaraná</li>
+                                <li>Fanta</li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">Cappucino</li>
+                        <li class="menu-item">Água</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="horarios">
+            <div class="grid-horarios">
+                <table name="TabelaHorarios" border="1">
+                    <thead>
+                        <tr>
+                            <th colspan="8">
+                                <h2>Horário de funcionamento</h2>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Horários</th>
+                            <th>Segunda</th>
+                            <th>Terça</th>
+                            <th>Quarta</th>
+                            <th>Quinta</th>
+                            <th>Sexta</th>
+                            <th>Sábado</th>
+                            <th>Domingos e Feriados</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr align="center" valign="center">
+                            <td>Manhã</td>
+                            <td>08:00<br>12:00</td>
+                            <td rowspan="2">Fechado</td>
+                            <td>08:00<br>12:00</td>
+                            <td>08:00<br>12:00</td>
+                            <td>08:00<br>12:00</td>
+                            <td>08:00<br>12:00</td>
+                            <td rowspan="2">08:00<br>12:00</td>
+                        </tr>
+                        <tr align="center" valign="center">
+                            <td>Tarde</td>
+                            <td>14:00<br>18:00</td>
+                            <td>14:00<br>18:00</td>
+                            <td>14:00<br>18:00</td>
+                            <td>14:00<br>18:00</td>
+                            <td>14:00<br>18:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="contato">
+            <h2 class="section-title">Contato</h2>
+            <form class="contact-form">
+                <label for="nome">
+                    <p>Nome</p>
+                </label>
+                <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo: " required>
+                <br>
+                <label for="email">
+                    <p>Email</p>
+                </label>
+                <input type="text" name="email" id="email" placeholder="Digite seu email: " required>
+                <br>
+                <label for="telefone">
+                    <p>Telefone</p>
+                </label>
+                <input type="tel" name="telefone" id="telefone">
+                <hr>
+                <label for="assunto">
+                    <p>Assunto</p>
+                </label>
+                <select name="assuntos" id="assunto" required>
+                    <option value="Vagas">Vagas</option>
+                    <option value="Reclamações">Reclamações</option>
+                    <option value="Elogios">Elogios</option>
+                </select>
+                <label for="mensagem">
+                    <p>Mensagem</p>
+                </label>
+                <textarea name="mensagem" id="mensagem" required></textarea>
+                <br>
+                <button>Enviar</button>
+                <button type="reset">Apagar</button>
+            </form>
+        </section>
+    </main>
 </body>
+
 </html>

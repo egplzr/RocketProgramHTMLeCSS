@@ -36,7 +36,7 @@
         </nav>
     </aside>
 
-    <main>
+    <main id="main-content">
         <article class="block" id="musicas">
             <h2>Músicas</h2>
             <ul>
@@ -167,13 +167,13 @@
             <p>Debates e análises sobre os principais assuntos do mundo de tecnologia no automobilismo.</p>
         </article>
     </main>
-    <section id="destaquesContent" class="destaques-container">
+    <section id="destaques-content">
         <article class="block">
             <h2>Destaques</h2>
             <div class="destaque-card">
                 <!-- Conteúdo do destaque -->
             </div>
-            <button class="back-button" onclick="toggleDestaques()">Voltar</button>
+            <button class="back-button" onclick="toggleDestaques()">← Voltar</button>
         </article>
     </section>
 
@@ -181,12 +181,8 @@
 
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const aside = document.querySelector('aside');
-            aside.classList.toggle('active');
-        }
-    </script>
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+    <script src="./script/script.js"></script>
 </body>
 
 </html>
