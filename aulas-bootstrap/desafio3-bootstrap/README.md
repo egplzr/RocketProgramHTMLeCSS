@@ -1,0 +1,2 @@
+Projeto realizado com base no conteúdo do vídeo: https://www.youtube.com/watch?v=JxtQJ8P0ekE&t=351s e adaptado conforme as requisições do desafio.
+CRUD feito com armazenamento local, utilizando HTML, Bootstrap e JS.

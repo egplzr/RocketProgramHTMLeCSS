@@ -1,0 +1,65 @@
+body {
+    font-family: 'Noto Serif', sans-serif;
+    background: linear-gradient(to right, #14142e, #001c24);
+    color: white;
+    min-height: 100vh;
+}
+
+.profile-column {
+    background: #0f0f20c7;
+    border: 2px solid #6898f1;
+    border-radius: 4px;
+}
+
+.content-card {
+    background: #002e3b;
+    border: 2px solid #6898f1;
+    border-radius: 8px;
+}
+
+.portfolio-item {
+    background: #375b66;
+    border: 1px solid #4cc9f0;
+    border-radius: 4px;
+    transition: all 0.3s ease-out;
+}
+
+.portfolio-item:hover {
+    background-color: #334c53;
+    box-shadow: 0 0 15px #00ff9d33;
+    transform: scale(1.03);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+a:link {
+    color: rgb(0, 255, 76);
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(0, 255, 157);
+    text-decoration: none;
+}
+
+.social-link:hover {
+    transform: scale(1.03);
+}
+
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #60ebb6c0;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #0059ff;
+}
