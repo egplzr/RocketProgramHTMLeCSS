@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio-5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="container my-2">
+        <div class="row text-center">
+            <div class="col-12">
+                <h2>Desafio 5</h2>
+            </div>
+            <div class="col-12">
+                <h1>Bootstrap</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="container bg-dark rounded-3">
+            <header class="navbar navbar-expand-sm bg-body-tertiary shadow">
+                <div class="container rounded-4">
+                    <a href="#" class="navbar-brand">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000"
+                            viewBox="0 0 256 256">
+                            <path
+                                d="M94,24C71.63,24,56,43.74,56,72s15.63,48,38,48,38-19.74,38-48S116.37,24,94,24Zm0,80c-17.37,0-22-20.11-22-32s4.63-32,22-32,22,20.11,22,32S111.37,104,94,104Zm72,32c-22.37,0-38,19.74-38,48s15.63,48,38,48,38-19.74,38-48S188.37,136,166,136Zm0,80c-17.37,0-22-20.11-22-32s4.63-32,22-32,22,20.11,22,32S183.37,216,166,216ZM145,49.22a8,8,0,0,1,3.11-10.88l24-13.33A8,8,0,0,1,184,32v80a8,8,0,0,1-16,0V45.6l-12.12,6.73A8,8,0,0,1,145,49.22ZM104,144v80a8,8,0,0,1-16,0V157.6l-12.12,6.73a8,8,0,0,1-7.76-14l24-13.33A8,8,0,0,1,104,144Z">
+                            </path>
+                        </svg>
+                        Card do Enzo
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarDropdown" aria-controls="navbarDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    </button>
+
+                    <div class="container navbar-collapse" id="navbarDropdown">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link active" aria-current="page">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Cards</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Sobre nós</a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-primary btn-sm position-relative ms-5">
+                            Notificações
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                99+
+                                <span class="visually-hidden">unread messages</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="p-5">
+                <h2>Nossos cards</h2>
+                <div class="container my-3">
+                    <h5>Pokemons</h5>
+                    <div class="row">
+                        <div class="card col" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6>Nome do pokemon</h6>
+                                <p class="card-text">Exemplo de descrição do pokemon.</p>
+                            </div>
+                        </div>
+                        <div class="card col" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6>Nome do pokemon</h6>
+                                <p class="card-text">Exemplo de descrição do pokemon.</p>
+                            </div>
+                        </div>
+                        <div class="card col" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h6>Nome do pokemon</h6>
+                                <p class="card-text">Exemplo de descrição do pokemon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </main>
+        </section>
+    </main>
+
+    <footer class="row my-2">
+        <div class="col text-center">
+            <p><small class="text-secondary">Dados e informações extraidas do site e API <a href="https://pokeapi.co">pokeapi.co</a></small></p>
+            <p><small class="text-secondary">Egplzr 2025 &copy; Copyright. Todos os direitos reservados 2025</small></p>
+        </div>
+    </footer>
+
+    <!-- bootstrap script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <!-- Script boas-vindas -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            (function showAlert() {
+                let div = document.createElement('div');
+
+                div.innerHTML = `
+                    <div class="alert alert-info container-sm text-center" role="alert">
+                        Bem-vindo!
+                    </div>
+                `;
+
+                document.querySelector('main').prepend(div);
+
+                setTimeout(() => {
+                    div.remove();
+                }, 5000);
+            })();
+        });
+    </script>
+    <!-- script pokeapi -->
+    <script src="pokefetch.js"></script>
+</body>
+
+</html>
