@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         description.textContent = `Tipo: ${types} | Altura: ${pokemon.height/10}m | Peso: ${pokemon.weight/10}kg`;
 
         card.classList.add('loaded');
-        card.classList.add('bg-light');
+        card.classList.add('bg-secondary');
     }
 
     const cards = document.querySelectorAll('.card');
