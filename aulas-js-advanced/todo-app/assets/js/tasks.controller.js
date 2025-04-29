@@ -1,6 +1,4 @@
-const app = angular.module("taskModule" , [])
-
-app.controller("TaskController", function ($scope, $filter) {
+app.controller("TaskController", function ($scope, $filter, TaskService) {
     $scope.modalActive = false;
 
     $scope.showCompletedOnly = false;
@@ -8,7 +6,7 @@ app.controller("TaskController", function ($scope, $filter) {
     $scope.showForTodayOnly = false;
     $scope.today = new Date().toLocaleDateString();
 
-    $scope.tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+    $scope.tasks =  TaskService.getTasks();
 
     $scope.taskInput = {
         title: "",
@@ -50,18 +48,12 @@ app.controller("TaskController", function ($scope, $filter) {
     }
 
     $scope.handleSubmitAddTask = () => {
-        const title = $scope.taskInput.title
-        const date = $scope.taskInput.date
-        if(!title || !date) return
+        const title = $scope.taskInput.title;
+        const date = $scope.taskInput.date;
+        if(!title || !date) return;
 
-        $scope.tasks.push({
-            id: Math.random().toString(36).substring(2, 9),
-            title: title,
-            date: date,
-            checked: false
-        })
-
-        localStorage.setItem("tasks", JSON.stringify($scope.tasks.map(task => ({id: task.id, title: task.title, date: task.date}) )))
+        TaskService.addTask(title, date);
+        $scope.tasks = TaskService.getTasks();
 
         $scope.toggleModal()
         $scope.taskInput.title = "";
@@ -69,11 +61,12 @@ app.controller("TaskController", function ($scope, $filter) {
     }
 
     $scope.toggleCheckedTask = () => {
-        localStorage.setItem("tasks", JSON.stringify($scope.tasks.map(task => ({id: task.id, title: task.title, date: task.date}) )))
+        TaskService.toggleCheck();
+        $scope.tasks = TaskService.getTasks();
     }
 
     $scope.deleteTask = (currentTask) => {
-        $scope.tasks = $scope.tasks.filter((task) => task.id != currentTask.id)
-        localStorage.setItem("tasks", JSON.stringify($scope.tasks.map(task => ({id: task.id, title: task.title, date: task.date}) )))
+        TaskService.removeTasks(currentTask.id);
+        $scope.tasks = TaskService.getTasks();
     }
 })

@@ -1,0 +1,22 @@
+.delete-icon {
+    color: rgb(230, 92, 92);
+    height: 2.4rem;
+    width: 2.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card:hover .delete-icon {
+    opacity: 0.5;
+}
+
+.delete-icon:hover {
+    color: rgb(255, 0, 0);
+    opacity: 1;
+    cursor: pointer;
+}
