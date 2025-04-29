@@ -22,10 +22,17 @@
 }
 
 .modal {
-    display: block;
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal.ng-hide {
-    display: none;
+.modal.show, .modal[ng-show="true"] {
+    display: block !important;
 }

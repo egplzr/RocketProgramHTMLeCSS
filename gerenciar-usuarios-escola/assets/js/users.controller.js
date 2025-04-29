@@ -1,5 +1,3 @@
-const app = angular.module('usersModule', []);
-
 app.controller('usersController', function ($scope, $timeout, UserService) {
     $scope.message = "Bem-vindo ao sistema de cadastro escolar";
     $scope.typeFilter = '';
@@ -12,7 +10,9 @@ app.controller('usersController', function ($scope, $timeout, UserService) {
     }
 
     $scope.toggleModal = function() {
+        console.log('teste click:', $scope.modalActive);
         $scope.modalActive = !$scope.modalActive;
+        console.log('teste modalState:', $scope.modalActive);
         
         if (!$scope.modalActive) {
             $scope.newUser = {
@@ -41,7 +41,7 @@ app.controller('usersController', function ($scope, $timeout, UserService) {
                 nome: '',
                 tipo: ''
             }
-
+            $scope.modalActive = false;
             
         }
     }

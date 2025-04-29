@@ -77,37 +77,41 @@
         </section>
     </main>
 
-    <div class="modal" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" ng-show="modalActive">
+    <div ng-if="modalActive" class="modal-backdrop fade show"></div>
+    <div ng-if="modalActive" class="modal show d-block" tabindex="-1">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="addUserModalLabel">Adicionar Novo Usuário</h5>
-              <button type="button" class="btn-close" ng-click="toggleModal()"></button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="mb-3">
-                  <label for="userName" class="form-label">Nome</label>
-                  <input type="text" class="form-control" id="userName" ng-model="newUser.nome">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addUserModalLabel">Adicionar Novo Usuário</h5>
+                    <button type="button" class="btn-close" ng-click="toggleModal()"></button>
                 </div>
-                <div class="mb-3">
-                  <label for="userType" class="form-label">Tipo</label>
-                  <select class="form-select" id="userType" ng-model="newUser.tipo">
-                    <option value="">Selecione...</option>
-                    <option value="Aluno">Aluno</option>
-                    <option value="Professor">Professor</option>
-                  </select>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="userName" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="userName" ng-model="newUser.nome">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userType" class="form-label">Tipo</label>
+                            <select class="form-select" id="userType" ng-model="newUser.tipo">
+                                <option value="">Selecione...</option>
+                                <option value="Aluno">Aluno</option>
+                                <option value="Professor">Professor</option>
+                            </select>
+                        </div>
+                    </form>
                 </div>
-              </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" ng-click="toggleModal()">Cancelar</button>
+                    <button type="button" class="btn btn-primary" ng-click="addNewUser()">Adicionar</button>
+                </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" ng-click="toggleModal()">Cancelar</button>
-              <button type="button" class="btn btn-primary" ng-click="addNewUser()">Adicionar</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
+    <script>
+        const app = angular.module('usersModule', []);
+    </script>
     <script src="./assets/js/users.service.js"></script>
     <script src="./assets/js/users.controller.js"></script>
 
