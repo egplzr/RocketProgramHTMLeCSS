@@ -45,7 +45,7 @@
             </div>
 
             <div class="col-1">
-                <button type="button" class="btn btn-sm btn-primary">Adicionar</button>
+                <button type="button" class="btn btn-sm btn-primary" ng-click="toggleModal()">Adicionar</button>
             </div>
         </div>
     </header>
@@ -54,7 +54,7 @@
             <div class="row d-flex align-items-center justify-content-center gap-3">
                 <div ng-repeat="user in users | filter:search | filter:{tipo: typeFilter}"
                     class="card col-3 p-2 d-flex align-items-center">
-                    <span class="delete-icon position-absolute top-0 end-0 p-2">
+                    <span class="delete-icon position-absolute top-0 end-0 p-2" ng-click="deleteUser($index)">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-trash" viewBox="0 0 16 16">
                             <path
@@ -77,6 +77,38 @@
         </section>
     </main>
 
+    <div class="modal" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" ng-show="modalActive">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addUserModalLabel">Adicionar Novo Usuário</h5>
+              <button type="button" class="btn-close" ng-click="toggleModal()"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                  <label for="userName" class="form-label">Nome</label>
+                  <input type="text" class="form-control" id="userName" ng-model="newUser.nome">
+                </div>
+                <div class="mb-3">
+                  <label for="userType" class="form-label">Tipo</label>
+                  <select class="form-select" id="userType" ng-model="newUser.tipo">
+                    <option value="">Selecione...</option>
+                    <option value="Aluno">Aluno</option>
+                    <option value="Professor">Professor</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" ng-click="toggleModal()">Cancelar</button>
+              <button type="button" class="btn btn-primary" ng-click="addNewUser()">Adicionar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="./assets/js/users.service.js"></script>
     <script src="./assets/js/users.controller.js"></script>
 
     <!-- bootstrap script -->
