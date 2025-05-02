@@ -4,19 +4,21 @@ app.controller('usersController', function ($scope, $timeout, UserService) {
     $scope.search = '';
     $scope.modalActive = false;
 
-    $scope.newUser = {
-        nome: '',
-        tipo: ''
-    }
+    $scope.users = UserService.getUsers();
+    $scope.loading = false;
+    $scope.mensagemErro = "";
+    $scope.mensagemSucesso = "";
+    $scope.newUser = { nome: "", email: "", tipo: "" };
 
-    $scope.toggleModal = function() {
+    $scope.toggleModal = function () {
         console.log('teste click:', $scope.modalActive);
         $scope.modalActive = !$scope.modalActive;
         console.log('teste modalState:', $scope.modalActive);
-        
+
         if (!$scope.modalActive) {
             $scope.newUser = {
                 nome: '',
+                email: '',
                 tipo: ''
             };
         }
@@ -29,20 +31,31 @@ app.controller('usersController', function ($scope, $timeout, UserService) {
 
     $scope.users = UserService.getUsers();
 
-    $scope.deleteUser = function(index) {
+    $scope.deleteUser = function (index) {
         UserService.deleteUser(index);
     };
 
-    $scope.addNewUser = function() {
-        if ($scope.newUser.nome && $scope.newUser.tipo) {
-            UserService.addUser($scope.newUser.nome, $scope.newUser.tipo);
+    $scope.addNewUser = function (form) {
+        if (form.$invalid) return;
 
-            $scope.newUser = {
-                nome: '',
-                tipo: ''
-            }
-            $scope.modalActive = false;
-            
-        }
-    }
+        $scope.loading = true;
+        $scope.mensagemErro = "";
+        $scope.mensagemSucesso = "";
+
+        UserService.salvar($scope.newUser)
+            .then(function () {
+                $scope.mensagemSucesso = "Usuário adicionado com sucesso!";
+                $scope.newUser = { nome: "", email: "", tipo: "" };
+                form.$setPristine();
+                form.$setUntouched();
+            })
+            .catch(function (err) {
+                $scope.mensagemErro = err;
+            })
+            .finally(function () {
+                $timeout(function () {
+                    $scope.loading = false;
+                }, 0);
+            });
+    };
 });
