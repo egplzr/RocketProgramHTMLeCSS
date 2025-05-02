@@ -78,22 +78,25 @@
             </button>
             <h2>Add a task</h2>
 
-            <form ng-submit="handleSubmitAddTask()">
+            <form name="form" ng-submit="handleSubmitAddTask()">
                 <label>
                     <p>Name</p>
-                    <input type="text" ng-model="taskInput.title">
+                    <input type="text" name="title" placeholder="task name" ng-model="taskInput.title"
+                        ng-required="true" ng-minLength="1"
+                        ng-style="{validate(form.title.$error, form.title.$touched)">
                 </label>
                 <label>
                     <p>Date</p>
-                    <input type="date" ng-model="taskInput.date">
+                    <input type="date" ng-required="true" ng-model="taskInput.date"
+                        ng-style="{validate(form.title.$error, form.title.$touched)">
                 </label>
-                <button class="send" type="submit">Add</button>
+                <button class="send" type="submit" ng-disabled="!form.$valid">Add</button>
             </form>
         </div>
     </aside>
 
     <script>
-        window.app = angular.module("taskModule" , [])
+        window.app = angular.module("taskModule", [])
     </script>
     <script src='./assets/js/tasks.service.js'></script>
     <script src='./assets/js/tasks.controller.js'></script>

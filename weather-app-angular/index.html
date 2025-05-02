@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="WeatherApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do tempo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Flow+Circular&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=UnifrakturMaguntia&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/previsao.css">
+</head>
+
+<body ng-controller="WeatherController">
+    <section class="card" ng-class="{'active': cardActive}">
+        <h1>{{cityName}}</h1>
+        <img ng-if="iconUrl" 
+        ng-src="{{iconUrl}}" alt="clouds" class="icon">
+        <h2>{{temperature}}</h2>
+
+        <div class="min-max">
+            <p class="feels-like">Sensação térmica de <span>{{feelsLike}}°</span></p>
+            <p >Min <span class="min">{{minTemperature}}°</span></p>
+            <p >Max <span class="max">{{maxTemperature}}°</span></p>
+        </div >
+        <p class="humidity">Humidade <span>{{humidity}}%</span></p>
+        <div class="wind">
+            <img ng-style="{'transform': 'rotate('+windDirection+'deg)'}" src="./assets/images/arrow.png" alt="Seta que representa direção do vento">
+            <p>Velocidade do vento: <span>{{windVelocity}}m/s</span></p>
+        </div>
+
+    </section>
+    <section class="input">
+        <input type="text" placeholder="Busque uma cidade" ng-model="city">
+        <button type="button" ng-click="callApi()">Buscar</button>
+    </section>
+
+    <script src="./assets/script/main.js"></script>
+</body>
+
+</html>
