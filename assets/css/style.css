@@ -47,6 +47,10 @@ h2 {
     margin-bottom: 1rem;
 }
 
+h3 {
+    margin: 0.8rem;
+}
+
 #coluna-foto {
     background: #0f0f20c7;
     color: white;
